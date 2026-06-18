@@ -5,7 +5,7 @@ Structure
 ├── classifier.py
 deployment/ │ 
             ├── webserver.py │ 
-            ├── Efficientnet_standalone.py │ 
+            ├── standalone.py │ 
             ├── requirements.txt │ 
             └── templates/ │ 
                            └── index.html
@@ -69,3 +69,5 @@ The trained TorchScript model was deployed on a Raspberry Pi 5 using both a stan
 The deep learning model was trained using scalogram images generated through a Variational Mode Decomposition (VMD) and Continuous Wavelet Transform (CWT) framework. After training, the learned model parameters were exported as a TorchScript (.pt) file and deployed on a Raspberry Pi 5 using a Flask-based web application. During deployment, the trained model performs real-time inference on uploaded respiratory sound recordings and provides Chronic or Non-Chronic predictions through a browser-based interface, enabling edge-AI respiratory disease screening without cloud connectivity.
 **standalone.py**
 The trained EfficientNet model was deployed on a Raspberry Pi 5 as a standalone desktop application using Tkinter. The application allows users to select respiratory sound recordings in WAV format through a graphical user interface. The uploaded audio signal is converted into a Continuous Wavelet Transform (CWT) scalogram, which is then provided to the trained TorchScript model for inference. The predicted class (Chronic or Non-Chronic), confidence score, and processing time are displayed to the user, enabling real-time respiratory disease classification without requiring cloud connectivity.
+**index.html**
+The HTML interface provides a simple and responsive web-based platform for respiratory sound classification. Users can upload lung sound recordings in WAV format through the browser, after which the system displays the predicted class (Chronic or Non-Chronic), confidence score, waveform visualization, and generated scalogram image. The interface is designed to facilitate easy interaction with the deployed deep learning model while providing an intuitive visualization of the uploaded respiratory signal.
