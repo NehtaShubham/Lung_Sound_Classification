@@ -65,3 +65,5 @@ The trained TorchScript model was deployed on a Raspberry Pi 5 using both a stan
 **Standalone Tkinter GUI
 **Real-time respiratory sound classification
 **Chronic / Non-Chronic prediction
+**webserver.py**
+The deep learning model was trained using scalogram images generated through a Variational Mode Decomposition (VMD) and Continuous Wavelet Transform (CWT) framework. After training, the learned model parameters were exported as a TorchScript (.pt) file and deployed on a Raspberry Pi 5 using a Flask-based web application. During deployment, the trained model performs real-time inference on uploaded respiratory sound recordings and provides Chronic or Non-Chronic predictions through a browser-based interface, enabling edge-AI respiratory disease screening without cloud connectivity.
