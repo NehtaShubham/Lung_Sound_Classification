@@ -3,6 +3,12 @@ Structure
 ├── dataset_preparation.m 
 ├── lung_preprocessing.m
 ├── classifier.py
+deployment/ │ 
+            ├── webserver.py │ 
+            ├── Efficientnet_standalone.py │ 
+            ├── requirements.txt │ 
+            └── templates/ │ 
+                           └── index.html
 └── README.md
 Script Descriptions
 1. dataset_preparation.m
@@ -49,3 +55,13 @@ pip install numpy
 pip install matplotlib
 pip install scikit-learn
 pip install torchinfo
+*****************************
+#Raspberry Pi 5 Deployment
+*****************************
+The trained TorchScript model was deployed on a Raspberry Pi 5 using both a standalone desktop application and a Flask-based web interface.
+*Deployment Features
+**Edge AI inference on Raspberry Pi 5
+**Flask-based web application
+**Standalone Tkinter GUI
+**Real-time respiratory sound classification
+**Chronic / Non-Chronic prediction
