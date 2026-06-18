@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lung Sound Classifier</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            background-color: #f7f9fb;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #2c3e50;
+        }
+
+        form {
+            margin: 20px auto;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        h3, p {
+            font-size: 22px;
+            margin: 10px 0;
+        }
+
+        img {
+            margin: 10px 0;
+            max-width: 90%;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .note {
+            font-size: 18px;
+            color: #e74c3c;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .health-tip {
+            font-size: 18px;
+            color: #27ae60;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            h3, p {
+                font-size: 20px;
+            }
+
+            button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Lung Sound Classifier</h1>
+
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".wav" required>
+        <br>
+        <button type="submit">Classify</button>
+    </form>
+
+    {% if prediction %}
+        <h3>Prediction: {{ prediction }}</h3>
+        <p>Confidence: {{ (confidence * 100) | round(2) }}%</p>
+        
+        <div>
+            <h4>Waveform of the Signal</h4>
+            <img src="{{ url_for('static', filename='waveform.png') }}" alt="Waveform">
+        </div>
+        
+        <div>
+            <h4>Scalogram of the Signal</h4>
+            <img src="{{ url_for('static', filename='scalogram.png') }}" alt="Scalogram">
+        </div>
+
+       
+        <p class="note">This is a machine learning-based prediction. Final verification must be done by a medical professional</p>
+        <p class="health-tip">Keep your lungs healthy — breathe clean, live well!</p>
+    {% endif %}
+
+</body>
+</html>
