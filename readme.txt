@@ -3,6 +3,7 @@ Structure
 ├── dataset_preparation.m 
 ├── lung_preprocessing.m
 ├── classifier.py
+├── official_split.txt
 deployment/ │ 
             ├── webserver.py │ 
             ├── standalone.py │ 
@@ -39,6 +40,8 @@ ROC curve visualization
 t-SNE feature visualization
 Model summary generation
 Trained model saving
+4.official_split.txt
+This file contain official  distribution of the subjects between training/test set downloaded from https://bhichallenge.med.auth.gr/sites/default/files/ICBHI_final_database/ICBHI_challenge_train_test.txt
 **Requirements**
 MATLAB
 Required toolboxes:
