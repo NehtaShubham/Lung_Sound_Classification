@@ -1,0 +1,29 @@
+*Hardware Requirements*
+Raspberry Pi 5
+8 GB RAM
+Ubuntu Linux
+32 GB or larger storage
+Internet connection (optional)
+*Software Requirements*
+Python 3.11
+PyTorch
+TorchVision
+Flask
+NumPy
+SciPy
+Matplotlib
+Pillow
+SSQqueezePy
+Installation
+
+*Install dependencies*:
+
+pip install -r deployment/requirements.txt
+Running the Web Application
+python deployment/webserver.py
+
+Open a browser and navigate to:
+
+http://<RaspberryPi_IP>:5000
+Running the Standalone GUI
+python deployment/Efficientnet_standalone.py
